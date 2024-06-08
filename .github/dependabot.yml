@@ -1,0 +1,6 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/frontend"  # Location of your package manifests (e.g., package.json)
+    schedule:
+      interval: "weekly"  # How often to check for updates
