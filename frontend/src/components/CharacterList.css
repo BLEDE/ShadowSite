@@ -1,0 +1,6 @@
+/* src/App.css or src/components/CharacterList.css */
+.no-bullets {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}

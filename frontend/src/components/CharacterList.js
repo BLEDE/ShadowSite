@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getCharacters } from '../services/characterService';
+import './CharacterList.css';  // Adjust the import path if necessary
 
 const CharacterList = () => {
     const [characters, setCharacters] = useState([]);
@@ -15,9 +16,13 @@ const CharacterList = () => {
     return (
         <div>
             <h1>Character List</h1>
-            <ul>
+            <ul className="no-bullets">
                 {characters.map((char) => (
-                    <li key={char.id}>{char.name} (Quality: {char.quality}) (Metatype: {metatype.quality})</li>
+                    <li key={char.id}>
+                        ({char.name})  
+                        (Quality: {char.quality}) 
+                        (Metatype: {char.metatype})
+                    </li>
                 ))}
             </ul>
         </div>
