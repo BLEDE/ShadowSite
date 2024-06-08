@@ -1,0 +1,35 @@
+import React, { useState } from 'react';
+import { addCharacter } from '../services/characterService';
+
+const CharacterForm = () => {
+    const [name, setName] = useState('');
+    const [level, setLevel] = useState('');
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const newCharacter = { name, level: parseInt(level) };
+        await addCharacter(newCharacter);
+        setName('');
+        setLevel('');
+    };
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <div>
+                <label>Name</label>
+                <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+            </div>
+            <div>
+                <label>Quality</label>
+                <input type="text" value={level} onChange={(e) => setLevel(e.target.value)} />
+            </div>
+            <div>
+                <label>Metatype</label>
+                <input type="text" value={level} onChange={(e) => setLevel(e.target.value)} />
+            </div>
+            <button type="submit">Add Character</button>
+        </form>
+    );
+};
+
+export default CharacterForm;
