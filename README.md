@@ -20,6 +20,11 @@ Launches the backend in debug mode.\
 
 The backend will not reload automatically when changes are made, and must be restarted.
 
+## Diagrams
+
+Logic flow PoC
+![Diagram](docs/architecture.png)
+
 ## Learn More
 
 You can learn more in the [Shadowsite documentation](https://docs.google.com/document/d/1StbIFt6FPAbcIprQRGOBmZ4AXzxWjGNd2H437xE5fGY/edit?usp=sharing).
