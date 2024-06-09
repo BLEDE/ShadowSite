@@ -19,8 +19,8 @@ const CharacterList = () => {
             <ul className="no-bullets">
                 {characters.map((char) => (
                     <li key={char.id}>
-                        ({char.name})  
-                        (Quality: {char.quality}) 
+                        (Name: {char.name})  
+                        {char.quality && `(Quality: ${char.quality})`}
                         (Metatype: {char.metatype})
                     </li>
                 ))}
