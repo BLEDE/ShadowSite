@@ -8,11 +8,37 @@ import axios from 'axios';
 const API_URL = 'http://127.0.0.1:5000';
 
 export const getCharacters = async () => {
-    const response = await axios.get(`${API_URL}/characters`);
-    return response.data;
+    try {
+        const response = await axios.get(`${API_URL}/characters`);
+        return response.data;
+    } catch (error) {
+        throw new Error('Error getting all characters info');
+    }
+};
+
+export const getCharacter = async (id) => {
+    try {
+        const response = await axios.get(`${API_URL}/character/${id}`);
+        return response.data;
+    } catch (error) {
+        throw new Error('Error getting character info');
+    }
 };
 
 export const addCharacter = async (character) => {
-    const response = await axios.post(`${API_URL}/character`, character);
-    return response.data;
+    try {
+        const response = await axios.post(`${API_URL}/character`, character);
+        return response.data;
+    } catch (error) {
+        throw new Error('Error adding character');
+    }
+};
+
+export const removeCharacter = async (id) => {
+    try {
+        const response = await axios.delete(`${API_URL}/character/${id}`);
+        return response.data;
+    } catch (error) {
+        throw new Error('Error removing character');
+    }
 };
