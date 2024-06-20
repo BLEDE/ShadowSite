@@ -7,5 +7,8 @@ class CharacterSheet(db.Model):
     metatype = db.Column(db.String(80), nullable=False)
     # Add other fields as needed
 
+    VALID_FIELDS = {"name", "quality", "metatype"}
+    REQUIRED_FIELDS = {"name", "metatype"}
+
     def as_dict(self):
         return {col.name: getattr(self, col.name) for col in self.__table__.columns}

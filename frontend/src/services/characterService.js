@@ -42,3 +42,13 @@ export const removeCharacter = async (id) => {
         throw new Error('Error removing character');
     }
 };
+
+export const editCharacter = async (id, editData) => {
+    try {
+        const response = await axios.put(`${API_URL}/character/${id}`, editData);
+        return response.data;
+    } catch (error) {
+        throw new Error('Error editing character');
+    }
+};
+
