@@ -1,19 +1,23 @@
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import CharacterForm from './pages/CharacterForm';
+import { BrowserRouter as Router, Link, useLocation } from 'react-router-dom';
+import AppRoutes from './Routes';
 
 const App = () => {
+  const location = useLocation();
+
   return (
-    <Router>
-      <Link to="/">Home</Link>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/create" element={<CharacterForm />} />
-      </Routes>
-    </Router>
+    <div>
+      {location.pathname !== '/' && <Link to="/">Home</Link>}
+      <AppRoutes />
+    </div>
   );
 };
 
-export default App;
+const AppWithRouter = () => (
+  <Router>
+    <App />
+  </Router>
+);
+
+export default AppWithRouter;
